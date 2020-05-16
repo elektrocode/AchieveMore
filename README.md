@@ -1,2 +1,2 @@
 # AchieveMore
-Motiviational goal setting Android application
+Motivational goal setting Android application
