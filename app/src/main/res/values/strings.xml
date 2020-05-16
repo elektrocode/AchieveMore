@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">AchieveMore</string>
-    <string name="creators">Elektromo &amp; CompEng0001</string>
-    <string name="version">1.0.0.0</string>
-
+    <string name="creators">Created by: Elektromo &amp; CompEng0001</string>
+    <string name="version">Version: 1.0.0.0</string>
 </resources>
