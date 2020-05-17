@@ -31,7 +31,6 @@ public class SplashscreenActivity extends AppCompatActivity
         versionTV.append(String.valueOf(appInfo.getAppVersionName()));
         timesOpenedTV.append(String.valueOf(" " + appInfo.getAppOpened(getApplicationContext())));
 
-
         /* New Handler to start the Menu-Activity
          * and close this Splash-Screen after some seconds.*/
         new Handler().postDelayed(new Runnable()

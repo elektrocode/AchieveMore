@@ -41,7 +41,6 @@ public class AppInfo extends AppCompatActivity
         editor.commit();
     }
 
-
     public int getAppOpened(Context context)
     {
         SharedPreferences setPrefs =  context.getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
