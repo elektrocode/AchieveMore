@@ -19,13 +19,17 @@ public class SplashscreenActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        appInfo.setAppOpened(getApplicationContext());
         TextView buildTV = findViewById(R.id.idbuildTV);
         TextView creatorsTV = findViewById(R.id.idcreatorsTV);
         TextView versionTV = findViewById(R.id.idVersionTV);
+        TextView timesOpenedTV = findViewById(R.id.idtimesOpenedTV);
 
         buildTV.append(String.valueOf(appInfo.getAppBuildType()));
         creatorsTV.append(String.valueOf(appInfo.getAppCreators()));
         versionTV.append(String.valueOf(appInfo.getAppVersionName()));
+        timesOpenedTV.append(String.valueOf(" " + appInfo.getAppOpened(getApplicationContext())));
 
 
         /* New Handler to start the Menu-Activity

@@ -3,4 +3,5 @@
     <string name="created">Created by: </string>
     <string name="version">Version: </string>
     <string name="build">Build Type: </string>
+    <string name="timesOpened">Total Times Opened: </string>
 </resources>
