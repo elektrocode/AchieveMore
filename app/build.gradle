@@ -11,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0.0.0"
         buildConfigField "String", "AUTHORS", '"Elektromo & CompEng0001"'
-        buildConfigField "String", "BUILDTYPE", '"Development"'
+        buildConfigField "String", "BUILDSTAGE", '"Development"'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

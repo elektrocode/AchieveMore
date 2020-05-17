@@ -20,7 +20,7 @@ public class AppInfo extends AppCompatActivity
     }
     public String getAppBuildType()
     {
-        return (" " + BuildConfig.BUILDTYPE +" - " + BuildConfig.BUILD_TYPE);
+        return (" " + BuildConfig.BUILDSTAGE +" - " + BuildConfig.BUILD_TYPE);
     }
 }
 
