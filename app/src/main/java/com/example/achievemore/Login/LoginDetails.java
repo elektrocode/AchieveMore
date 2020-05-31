@@ -11,7 +11,7 @@ import java.util.Set;
 public class LoginDetails {
 
     SharedPreferences sp;
-    private static final String mypreference = "UserLoginDetialsPref";
+    private static final String mypreference = "UserLoginDetailsPref";
     private static final String Username = "usernamekey";
     private static final String Password = "passwordKey";
 
@@ -56,12 +56,21 @@ public class LoginDetails {
         return found;
     }
 
-    public void SetUserCreds(Context context)
+    public void DevelopmemtSetUserCreds(Context context)
     {
         SharedPreferences sp = context.getSharedPreferences(mypreference,Context.MODE_PRIVATE);
         SharedPreferences.Editor Ed =sp.edit();
-        Ed.putString("usernameKey","testing" );
+        Ed.putString("usernameKey","testing");
         Ed.putString("passwordKey","password1234");
+        Ed.apply();
+    }
+
+    public void SetUserCreds(Context context, String suppliedusername, String suppliedpassword)
+    {
+        SharedPreferences sp = context.getSharedPreferences(mypreference,Context.MODE_PRIVATE);
+        SharedPreferences.Editor Ed =sp.edit();
+        Ed.putString("usernameKey",suppliedusername);
+        Ed.putString("passwordKey",suppliedpassword);
         Ed.apply();
     }
 }

@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
-            LD.SetUserCreds(getApplicationContext());
+            LD.DevelopmemtSetUserCreds(getApplicationContext());
             versionTV.append(String.valueOf(appInfo.getAppVersionName()));
             buildTV.append(String.valueOf(appInfo.getAppBuildType()));
 
@@ -100,6 +100,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void register()
     {
-
+        String username = usernameInputTV.getText().toString();
+        String password = passwordInputTV.getText().toString();
+        LD.SetUserCreds(getApplicationContext(),username,password);
     }
 }
