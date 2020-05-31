@@ -14,6 +14,7 @@ import com.example.achievemore.SystemInfo.AppInfo;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
+
     AppInfo appInfo = new AppInfo();
     LoginDetails LD = new LoginDetails();
     TextView versionTV = findViewById(R.id.idVersionTV);
@@ -23,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     final TextView usernameErrorFieldTV = findViewById(R.id.idusernameErrorTV);
     final TextView passwordErrorFieldTV = findViewById(R.id.idpasswordErrorTV);
     final Button loginBtn = findViewById(R.id.idLoginBtn);
-    final Button regsisterBtn = findViewById(R.id.idRegisterBtn);
+    final Button registerBtn = findViewById(R.id.idRegisterBtn);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-            regsisterBtn.setOnClickListener(new View.OnClickListener() {
+            registerBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     register();

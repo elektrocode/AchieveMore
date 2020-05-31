@@ -15,7 +15,7 @@ public class LoginDetails {
     private static final String Username = "usernamekey";
     private static final String Password = "passwordKey";
 
-    public void LoginDetials()
+    public void LoginDetails()
     {
 
     }
