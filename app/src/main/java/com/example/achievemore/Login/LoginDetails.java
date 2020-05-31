@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import java.util.Map;
 import java.util.Set;
 
-public class LoginDetials {
+public class LoginDetails {
 
     SharedPreferences sp;
     private static final String mypreference = "UserLoginDetialsPref";

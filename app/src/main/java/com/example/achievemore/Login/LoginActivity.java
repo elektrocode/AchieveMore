@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginActivity extends AppCompatActivity {
     AppInfo appInfo = new AppInfo();
-    LoginDetials LD = new LoginDetials();
+    LoginDetails LD = new LoginDetails();
     TextView versionTV = findViewById(R.id.idVersionTV);
     TextView buildTV = findViewById(R.id.idbuildTV);
     final TextInputEditText usernameInputTV = findViewById(R.id.idUsernameTIET);
@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     final TextView usernameErrorFieldTV = findViewById(R.id.idusernameErrorTV);
     final TextView passwordErrorFieldTV = findViewById(R.id.idpasswordErrorTV);
     final Button loginBtn = findViewById(R.id.idLoginBtn);
-    final Button regsiterBtn = findViewById(R.id.idRegisterBtn);
+    final Button regsisterBtn = findViewById(R.id.idRegisterBtn);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +41,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
 
-            regsiterBtn.setOnClickListener(new View.OnClickListener() {
+            regsisterBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    register(); 
+                    register();
                 }
             });
     }
