@@ -22,35 +22,38 @@ public class LoginDetials {
 
     public boolean CheckUsername(String suppliedUsername, Context context)
     {
+        boolean found;
         sp = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
 
         String RetrievedUsername = sp.getString("usernameKey",null);
 
-        if( suppliedUsername == RetrievedUsername )
+        if(suppliedUsername.equals(RetrievedUsername))
         {
-            return true;
+            found = true;
         }
         else
         {
-            return false;
+            found = false;
         }
-
+        return found;
     }
 
     public boolean CheckPassword(String SuppliedPassword, Context context)
     {
+        boolean found;
         SharedPreferences sp = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
 
         String RetrievedPassword = sp.getString("passwordKey",null);
 
-        if( RetrievedPassword == SuppliedPassword )
+        if(RetrievedPassword.equals(SuppliedPassword))
         {
-            return true;
+           found = true;
         }
         else
         {
-            return false;
+            found = false;
         }
+        return found;
     }
 
     public void SetUserCreds(Context context)

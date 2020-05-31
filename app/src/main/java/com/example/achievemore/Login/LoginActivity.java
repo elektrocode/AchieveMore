@@ -18,73 +18,72 @@ public class LoginActivity extends AppCompatActivity {
     LoginDetials LD = new LoginDetials();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        LD.SetUserCreds(getApplicationContext());
-        TextView versionTV = findViewById(R.id.idVersionTV);
-        TextView buildTV = findViewById(R.id.idbuildTV);
-        versionTV.append(String.valueOf(appInfo.getAppVersionName()));
-        buildTV.append(String.valueOf(appInfo.getAppBuildType()));
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_login);
+            LD.SetUserCreds(getApplicationContext());
+            TextView versionTV = findViewById(R.id.idVersionTV);
+            TextView buildTV = findViewById(R.id.idbuildTV);
+            versionTV.append(String.valueOf(appInfo.getAppVersionName()));
+            buildTV.append(String.valueOf(appInfo.getAppBuildType()));
 
-        final TextInputEditText usernameInputTV = findViewById(R.id.idUsernameTIET);
-        final TextInputEditText passwordInputTV = findViewById(R.id.idPasswordTIET);
-        final TextView usernameErrorFieldTV = findViewById(R.id.idusernameErrorTV);
-        final TextView passwordErrorFieldTV = findViewById(R.id.idpasswordErrorTV);
+            final TextInputEditText usernameInputTV = findViewById(R.id.idUsernameTIET);
+            final TextInputEditText passwordInputTV = findViewById(R.id.idPasswordTIET);
+            final TextView usernameErrorFieldTV = findViewById(R.id.idusernameErrorTV);
+            final TextView passwordErrorFieldTV = findViewById(R.id.idpasswordErrorTV);
 
-        Button loginBtn = findViewById(R.id.idLoginBtn);
-        Button regsiterBtn = findViewById(R.id.idRegisterBtn);
+            Button loginBtn = findViewById(R.id.idLoginBtn);
+            Button regsiterBtn = findViewById(R.id.idRegisterBtn);
 
-        loginBtn.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
+            loginBtn.setOnClickListener(new View.OnClickListener()
             {
-                if(usernameInputTV.length() == 0)
+                public void onClick(View v)
                 {
-                    if (passwordInputTV.length() == 0)
+                    if(usernameInputTV.length() == 0)
                     {
-                        passwordErrorFieldTV.setText("Enter a username");
-                        passwordErrorFieldTV.setText("Enter a password");
-                        return;
-                    }
-                    else
-                    {
-                        passwordErrorFieldTV.setText("Enter a username");
-                        return;
-                    }
-                }
-                else
-                {
-                    if(passwordInputTV.length() == 0)
-                    {
-                        passwordInputTV.setText("Enter a password");
-                    }
-                    else
-                    {
-                        boolean usernameFound = LD.CheckUsername(usernameInputTV.getText().toString(), getApplicationContext());
-                        boolean passwordCorrect = LD.CheckPassword((passwordInputTV.getText().toString()), getApplicationContext());
-
-                        if(!usernameFound)
+                        if (passwordInputTV.length() == 0)
                         {
-                            usernameErrorFieldTV.setText("Username does not exist");
+                            passwordErrorFieldTV.setText("Enter a username");
+                            passwordErrorFieldTV.setText("Enter a password");
+                            return;
                         }
                         else
                         {
-                            if (!passwordCorrect)
+                            passwordErrorFieldTV.setText("Enter a username");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        if(passwordInputTV.length() == 0)
+                        {
+                            passwordInputTV.setText("Enter a password");
+                        }
+                        else
+                        {
+                            boolean usernameFound = LD.CheckUsername(usernameInputTV.getText().toString(), getApplicationContext());
+                            boolean passwordCorrect = LD.CheckPassword((passwordInputTV.getText().toString()), getApplicationContext());
+
+                            if(!usernameFound)
                             {
-                                passwordErrorFieldTV.setText("password does not match");
+                                usernameErrorFieldTV.setText("Username does not exist");
                             }
                             else
                             {
-                                Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-                                LoginActivity.this.startActivity(mainIntent);
-                                LoginActivity.this.finish();
+                                if (!passwordCorrect)
+                                {
+                                    passwordErrorFieldTV.setText("password does not match");
+                                }
+                                else
+                                {
+                                    Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                                    LoginActivity.this.startActivity(mainIntent);
+                                    LoginActivity.this.finish();
+                                }
                             }
                         }
                     }
                 }
-            }
-        });
-
+            });
     }
 
 }
