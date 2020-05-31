@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/idcreatorsTV"
+        android:id="@+id/idVersionTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/created"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.738" />
 
     <TextView
-        android:id="@+id/idVersionTV"
+        android:id="@+id/idcreatorsTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/version"

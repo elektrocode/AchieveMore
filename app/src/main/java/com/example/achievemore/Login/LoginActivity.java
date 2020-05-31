@@ -1,8 +1,10 @@
-package com.example.achievemore;
+package com.example.achievemore.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.achievemore.R;
 
 public class LoginActivity extends AppCompatActivity {
 

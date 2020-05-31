@@ -1,10 +1,12 @@
-package com.example.achievemore;
+package com.example.achievemore.SystemInfo;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.achievemore.BuildConfig;
 
 import java.net.ConnectException;
 

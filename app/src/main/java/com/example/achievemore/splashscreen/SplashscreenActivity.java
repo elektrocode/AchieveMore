@@ -1,4 +1,4 @@
-package com.example.achievemore.ui.splashscreen;
+package com.example.achievemore.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
-import com.example.achievemore.AppInfo;
-import com.example.achievemore.MainActivity;
+import com.example.achievemore.SystemInfo.AppInfo;
+import com.example.achievemore.Login.LoginActivity;
 import com.example.achievemore.R;
 
 public class SplashscreenActivity extends AppCompatActivity
@@ -27,7 +27,7 @@ public class SplashscreenActivity extends AppCompatActivity
         appInfo.setAppOpened(getApplicationContext());
         TextView buildTV = findViewById(R.id.idbuildTV);
         TextView creatorsTV = findViewById(R.id.idcreatorsTV);
-        TextView versionTV = findViewById(R.id.idVersionTV);
+        TextView versionTV = findViewById(R.id.idcreatorsTV);
         TextView timesOpenedTV = findViewById(R.id.idtimesOpenedTV);
 
         buildTV.append(String.valueOf(appInfo.getAppBuildType()));
@@ -43,7 +43,7 @@ public class SplashscreenActivity extends AppCompatActivity
             public void run()
             {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(SplashscreenActivity.this, MainActivity.class);
+                Intent mainIntent = new Intent(SplashscreenActivity.this, LoginActivity.class);
                 SplashscreenActivity.this.startActivity(mainIntent);
                 SplashscreenActivity.this.finish();
             }
