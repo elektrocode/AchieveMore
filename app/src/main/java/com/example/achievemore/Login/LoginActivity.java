@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        LD.SetUserCreds(getApplicationContext());
         TextView versionTV = findViewById(R.id.idVersionTV);
         TextView buildTV = findViewById(R.id.idbuildTV);
         versionTV.append(String.valueOf(appInfo.getAppVersionName()));
@@ -60,16 +60,16 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        boolean username = LD.CheckUsername(usernameInputTV.getText().toString());
-                        boolean password = LD.CheckPassword((passwordInputTV.getText().toString()));
+                        boolean usernameFound = LD.CheckUsername(usernameInputTV.getText().toString(), getApplicationContext());
+                        boolean passwordCorrect = LD.CheckPassword((passwordInputTV.getText().toString()), getApplicationContext());
 
-                        if(!username)
+                        if(!usernameFound)
                         {
                             usernameErrorFieldTV.setText("Username does not exist");
                         }
                         else
                         {
-                            if (!password)
+                            if (!passwordCorrect)
                             {
                                 passwordErrorFieldTV.setText("password does not match");
                             }

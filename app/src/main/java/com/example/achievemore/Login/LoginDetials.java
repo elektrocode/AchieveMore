@@ -3,9 +3,13 @@ package com.example.achievemore.Login;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import androidx.annotation.Nullable;
+
+import java.util.Map;
+import java.util.Set;
+
 public class LoginDetials {
 
-    Context context;
     SharedPreferences sp;
     private static final String mypreference = "UserLoginDetialsPref";
     private static final String Username = "usernamekey";
@@ -16,7 +20,7 @@ public class LoginDetials {
 
     }
 
-    public boolean CheckUsername(String suppliedUsername)
+    public boolean CheckUsername(String suppliedUsername, Context context)
     {
         sp = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
 
@@ -33,9 +37,9 @@ public class LoginDetials {
 
     }
 
-    public boolean CheckPassword(String SuppliedPassword)
+    public boolean CheckPassword(String SuppliedPassword, Context context)
     {
-        sp = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
+        SharedPreferences sp = context.getSharedPreferences(mypreference, Context.MODE_PRIVATE);
 
         String RetrievedPassword = sp.getString("passwordKey",null);
 
@@ -49,15 +53,12 @@ public class LoginDetials {
         }
     }
 
-    public boolean SetUsername()
+    public void SetUserCreds(Context context)
     {
-
-        return true;
-    }
-
-    public boolean SetPassword()
-    {
-
-        return true;
+        SharedPreferences sp = context.getSharedPreferences(mypreference,Context.MODE_PRIVATE);
+        SharedPreferences.Editor Ed =sp.edit();
+        Ed.putString("usernameKey","testing" );
+        Ed.putString("passwordKey","password1234");
+        Ed.apply();
     }
 }
