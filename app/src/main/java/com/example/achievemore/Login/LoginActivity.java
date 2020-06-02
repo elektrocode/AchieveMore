@@ -61,7 +61,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login()
-    {
+    {   usernameErrorFieldTV.setText("");
+          passwordErrorFieldTV.setText("");
         if(usernameInputTV.length() == 0)
         {
             if (passwordInputTV.length() == 0)
@@ -72,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             else
             {
-                passwordErrorFieldTV.setText("Enter a username");
+                usernameErrorFieldTV.setText("Enter a username");
                 return;
             }
         }
