@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     TextView versionTV, buildTV, usernameErrorFieldTV, passwordErrorFieldTV ;
     Button loginBtn, registerBtn;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -81,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             if(passwordInputTV.length() == 0)
             {
-                passwordInputTV.setText("Enter a password");
+                passwordErrorFieldTV.setText("Enter a password");
             }
             else
             {
