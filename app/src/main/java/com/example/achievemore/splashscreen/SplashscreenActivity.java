@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.widget.TextView;
 
 import com.example.achievemore.SystemInfo.AppInfo;
-import com.example.achievemore.Login.LoginActivity;
 import com.example.achievemore.R;
 
 public class SplashscreenActivity extends AppCompatActivity
@@ -43,7 +42,7 @@ public class SplashscreenActivity extends AppCompatActivity
             public void run()
             {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(SplashscreenActivity.this, LoginActivity.class);
+                Intent mainIntent = new Intent(SplashscreenActivity.this, com.example.achievemore.Login.LoginActivity.class);
                 SplashscreenActivity.this.startActivity(mainIntent);
                 SplashscreenActivity.this.finish();
             }

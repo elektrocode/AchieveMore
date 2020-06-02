@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,19 +18,29 @@ public class LoginActivity extends AppCompatActivity {
 
     AppInfo appInfo = new AppInfo();
     LoginDetails LD = new LoginDetails();
-    TextView versionTV = findViewById(R.id.idVersionTV);
-    TextView buildTV = findViewById(R.id.idbuildTV);
-    final TextInputEditText usernameInputTV = findViewById(R.id.idUsernameTIET);
-    final TextInputEditText passwordInputTV = findViewById(R.id.idPasswordTIET);
-    final TextView usernameErrorFieldTV = findViewById(R.id.idusernameErrorTV);
-    final TextView passwordErrorFieldTV = findViewById(R.id.idpasswordErrorTV);
-    final Button loginBtn = findViewById(R.id.idLoginBtn);
-    final Button registerBtn = findViewById(R.id.idRegisterBtn);
+
+    TextInputEditText usernameInputTV, passwordInputTV;
+    TextView versionTV, buildTV, usernameErrorFieldTV, passwordErrorFieldTV ;
+    Button loginBtn, registerBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_login);
+
+            usernameInputTV = findViewById(R.id.idUsernameTIET);
+            passwordInputTV = findViewById(R.id.idPasswordTIET);
+
+            usernameErrorFieldTV = findViewById(R.id.idusernameErrorTV);
+            passwordErrorFieldTV = findViewById(R.id.idpasswordErrorTV);
+
+            loginBtn = findViewById(R.id.idLoginBtn);
+            registerBtn = findViewById(R.id.idRegisterBtn);
+
+            buildTV = findViewById(R.id.idbuildTV);
+            versionTV = findViewById(R.id.idVersionTV);
+
             LD.DevelopmemtSetUserCreds(getApplicationContext());
             versionTV.append(String.valueOf(appInfo.getAppVersionName()));
             buildTV.append(String.valueOf(appInfo.getAppBuildType()));

@@ -3,11 +3,6 @@ package com.example.achievemore.Login;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import androidx.annotation.Nullable;
-
-import java.util.Map;
-import java.util.Set;
-
 public class LoginDetails {
 
     SharedPreferences sp;
